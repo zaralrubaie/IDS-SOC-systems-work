@@ -1,0 +1,14 @@
+High Severity Alerts:
+- Isolate affected host
+- Block source IP
+- Notify SOC Lead
+- Preserve logs
+
+Medium Severity Alerts:
+- Monitor traffic
+- Increase logging
+- Schedule investigation
+
+Low Severity Alerts:
+- Log for trend analysis
+- No immediate action
