@@ -1,0 +1,18 @@
+Generic Attack:
+A broad category of attacks that exploit common vulnerabilities.
+Often automated and high frequency.
+
+Exploits:
+Attacks that use known software vulnerabilities to gain access.
+
+DoS:
+Denial of Service attacks aim to make systems unavailable.
+
+Reconnaissance:
+Scanning and probing activity to gather system information.
+
+Backdoor:
+Hidden methods to bypass authentication and maintain access.
+
+Shellcode:
+Malicious payloads designed to execute arbitrary code.
