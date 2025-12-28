@@ -1,0 +1,14 @@
+Reconnaissance:
+TA0043 - Network scanning, service discovery
+
+Exploits:
+TA0001 - Initial Access
+
+DoS:
+TA0040 - Impact
+
+Backdoor:
+TA0003 - Persistence
+
+Shellcode:
+TA0002 - Execution
