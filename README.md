@@ -44,19 +44,19 @@ Human-readable SOC Alert
 ---
 ## Why Binary + Multi-class Models?
 
-🔹 Binary Classification (Attack vs Normal)
+- Binary Classification (Attack vs Normal)
 Purpose:
 Quickly filters traffic into:
-- Normal
-- Attack
-🔹 Multi-class Classification (Attack Type)
+1. Normal
+2.Attack
+- Multi-class Classification (Attack Type)
 Purpose:
-Identifies the type of attack, such as:
-- DoS
-- Probe
-- Exploit
-- Brute Force
-- Other intrusion categories
+- Identifies the type of attack, such as:
+1. DoS
+2. Probe
+3. Exploit
+4. Brute Force
+5. Other intrusion categories
   
 ##  Alert Prioritization: RAG & Severity
 The pipeline assigns:
