@@ -23,31 +23,22 @@ An end-to-end SOC (Security Operations Center) alert pipeline that:
 - Provides human-readable alerts for SOC analysts
   
 # System Architecture & Workflow
-Network Traffic Logs
-        │
-        ▼
-Binary Classification Model
-(Attack vs Normal)
-        │
-        ├── Normal Traffic
-        │       └── Green / Low Severity Alert
-        │
-        ▼
-Multi-class Classification Model
-(Attack Type Prediction)
-        │
-        ▼
-Confidence Scoring
-(Binary + Multi-class)
-        │
-        ▼
-RAG & Severity Assignment
-(Red / Amber / Green)
-        │
-        ▼
-SOC Playbook Mapping
-        │
-        ▼
+### System Workflow
+
+Network Traffic Logs  
+⬇️  
+Binary Classification (Attack vs Normal)  
+⬇️  
+Normal Traffic → Green / Low Severity  
+⬇️  
+Multi-class Classification (Attack Type Prediction)  
+⬇️  
+Confidence Scoring (Binary + Multi-class)  
+⬇️  
+RAG & Severity Assignment (Red / Amber / Green)  
+⬇️  
+SOC Playbook Mapping  
+⬇️  
 Human-readable SOC Alert
 
 ---
