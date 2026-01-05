@@ -30,7 +30,8 @@ Network Traffic Logs
 Binary Classification Model
 (Attack vs Normal)
         │
-        ├── Normal → Green / Low Severity
+        ├── Normal Traffic
+        │       └── Green / Low Severity Alert
         │
         ▼
 Multi-class Classification Model
@@ -38,15 +39,18 @@ Multi-class Classification Model
         │
         ▼
 Confidence Scoring
+(Binary + Multi-class)
         │
         ▼
 RAG & Severity Assignment
+(Red / Amber / Green)
         │
         ▼
 SOC Playbook Mapping
         │
         ▼
 Human-readable SOC Alert
+
 ---
 ## Why Binary + Multi-class Models?
 
