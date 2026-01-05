@@ -1,22 +1,90 @@
-# SOC Alert Pipeline: Binary + Multi-class Intrusion Detection
+# SOC system overview 
 
+A Security Operations Center (SOC) is a centralized team responsible for monitoring, detecting, analyzing, and responding to cybersecurity threats in real time.
+
+## Typical SOC Challenges
+- High volume of alerts
+- Alert fatigue (too many low-quality alerts)
+- Slow prioritization of real threats
+- Lack of automated response guidance
+---
+This project addresses these challenges by automating:
+- Intrusion detection
+- Attack classification
+- Alert prioritization
+- SOC playbook recommendations
+  
+# SOC Alert Pipeline: Binary + Multi-class Intrusion Detection
 An end-to-end SOC (Security Operations Center) alert pipeline that:
 - Detects network intrusions using a binary model
 - Classifies attack types using a multi-class model
 - Assigns RAG (Red/Amber/Green) and Severity levels
 - Generates SOC playbook recommendations
 - Provides human-readable alerts for SOC analysts
+  
+# System Architecture & Workflow
 
-The project is deployed on Hugging Face and is free to use for testing and learning purposes.
+Network Traffic Logs
+        │
+        ▼
+Binary Classification Model
+(Attack vs Normal)
+        │
+        ├── Normal → Green / Low Severity
+        │
+        ▼
+Multi-class Classification Model
+(Attack Type Prediction)
+        │
+        ▼
+Confidence Scoring
+        │
+        ▼
+RAG & Severity Assignment
+        │
+        ▼
+SOC Playbook Mapping
+        │
+        ▼
+Human-readable SOC Alert
+---
+## Why Binary + Multi-class Models?
 
-## Table of Contents
-1. [Overview](#overview)
-2. [Features](#features)
-3. [Demo / Hugging Face Deployment](#demo--hugging-face-deployment)
-4. [Installation](#installation)
-5. [Usage](#usage)
-6. [Data Files](#data-files)
-7. [License](#license)
+🔹 Binary Classification (Attack vs Normal)
+Purpose:
+Quickly filters traffic into:
+- Normal
+- Attack
+🔹 Multi-class Classification (Attack Type)
+Purpose:
+Identifies the type of attack, such as:
+- DoS
+- Probe
+- Exploit
+- Brute Force
+- Other intrusion categories
+  
+##  Alert Prioritization: RAG & Severity
+The pipeline assigns:
+RAG Status
+- 🟥 Red – Critical threat
+
+- 🟧 Amber – Suspicious / Medium risk
+
+- 🟩 Green – Normal activity
+
+ Severity Levels:
+- High
+
+- Medium
+
+- Low
+
+This allows SOC analysts to:
+
+- Focus on high-risk alerts first
+- Reduce alert fatigue
+- Make faster decisions
 
 ## Features
 
@@ -27,6 +95,26 @@ The project is deployed on Hugging Face and is free to use for testing and learn
 - **Deployment-ready:** Outputs structured DataFrame or CSV, also generates readable alert text
 - **Modular & Tunable:** Thresholds and playbooks can be adjusted easily
   
+##  Example Output 
+
+| Attack Type | Binary Confidence | Multi-class Confidence | RAG   | Severity |
+| ----------- | ----------------- | ---------------------- | ----- | -------- |
+| DoS         | 0.94              | 0.35                   | Red   | High     |
+| Probe       | 0.93              | 0.36                   | Red   | High     |
+| Normal      | 0.98              | —                      | Green | Low      |
+
+. Human-Readable SOC Alert
+
+ALERT: Potential DoS attack detected
+Severity: High (Red)
+Confidence: 94%
+
+Recommended Actions:
+- Investigate source IP
+- Apply temporary network block
+- Escalate to Tier 2 SOC analyst
+
+---
 ## Demo / Hugging Face Deployment
 
 You can try the live version of this pipeline here:  
@@ -63,12 +151,6 @@ pip install -r requirements.txt
 ````
 ---
 
-## **6️⃣ Usage**
-1. Place your network log CSV in the `data/` folder
-2. Run the main script:
-```bash
-python src/soc_pipeline.py
-````
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
