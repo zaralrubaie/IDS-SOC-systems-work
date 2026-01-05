@@ -42,21 +42,33 @@ SOC Playbook Mapping
 Human-readable SOC Alert
 
 ---
-## Why Binary + Multi-class Models?
+## Binary vs Multi-class Classification
 
-- Binary Classification (Attack vs Normal)
-Purpose:
-Quickly filters traffic into:
-1. Normal
-2.Attack
-- Multi-class Classification (Attack Type)
-Purpose:
-- Identifies the type of attack, such as:
-1. DoS
-2. Probe
-3. Exploit
-4. Brute Force
-5. Other intrusion categories
+### Binary Classification (Attack vs Normal)
+
+**Purpose:**  
+Quickly filters network traffic into two categories:
+
+- **Normal** – Benign traffic with no security risk  
+- **Attack** – Potentially malicious activity requiring further analysis  
+
+This model acts as the **first decision layer**, reducing alert noise and preventing unnecessary processing of benign traffic.
+
+---
+
+### Multi-class Classification (Attack Type)
+
+**Purpose:**  
+Identifies the **specific type of attack** when malicious traffic is detected, such as:
+
+- DoS (Denial of Service)
+- Probe (Scanning and reconnaissance)
+- Exploit
+- Brute Force
+- Other intrusion categories
+
+This classification provides critical context for SOC analysts and enables **targeted investigation, prioritization, and response actions**.
+
   
 ##  Alert Prioritization: RAG & Severity
 The pipeline assigns:
