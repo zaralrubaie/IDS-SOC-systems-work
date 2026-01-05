@@ -124,7 +124,7 @@ Recommended Actions:
 ## Demo / Hugging Face Deployment
 
 You can try the live version of this pipeline here:  
-[Hugging Face SOC Alert Demo]([(https://huggingface.co/spaces/zahraa12355/soc)])
+[Hugging Face SOC Alert Demo](https://huggingface.co/spaces/zahraa12355/soc)
 
 **How to use the demo:**
 
