@@ -23,7 +23,6 @@ An end-to-end SOC (Security Operations Center) alert pipeline that:
 - Provides human-readable alerts for SOC analysts
   
 # System Architecture & Workflow
-
 Network Traffic Logs
         │
         ▼
